@@ -62,7 +62,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>NextPage(
-
+                          reg: _regcontroller.text,
+                          name: _namecontroller.text,
                         ),
                     ),
                 );
@@ -76,13 +77,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 class NextPage extends StatelessWidget {
-  const NextPage({super.key});
 
    final String name;
    final String reg;
 
-  NextPage({required this.nname});
-  NextPage({required this.reg});
+  NextPage({required this.name,required this.reg});
 
   @override
   Widget build(BuildContext context) {
@@ -92,8 +91,12 @@ class NextPage extends StatelessWidget {
           child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Text from Textfield: $name'),
-              Text('Text from Textfield: $reg')
+              Text('Your name: $name',
+                style: TextStyle(fontSize: 30 ),
+              ),
+              Text('Your register number: $reg',
+                style: TextStyle(fontSize: 30 ),
+              ),
             ],
 
           ),
